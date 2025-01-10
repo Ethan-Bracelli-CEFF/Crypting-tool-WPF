@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- Input Section -->
+        <Label Content="Input text :" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="textbox_input" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="300" Height="100" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+
+        <!-- Output Section -->
+        <Label Content="Result :" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="label_output" Text="Output" HorizontalAlignment="Left" Margin="400,50,0,0" VerticalAlignment="Top" Width="300" Height="100" Background="LightGray" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+
+        <!-- Controls -->
+        <ComboBox x:Name="combobox_algorithm" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Width="200" FontSize="12"  SelectionChanged="combobox_algorithm_SelectionChanged"/>
+        <Label x:Name="label_description" Content="" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="label_shift" Content="Shift : (1)" HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="120,220,0,0" VerticalAlignment="Top" Width="230" Minimum="1" Maximum="25" Value="1" TickFrequency="1" IsSnapToTickEnabled="True" Visibility="Hidden" ValueChanged="slider_ValueChanged"/>
+
+        <Label x:Name="label_alerte" Content="" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" FontSize="12" Foreground="Red"/>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            <Button x:Name="btn_encrypt" Content="Encrypt" Width="100" Height="40" Click="btn_encrypt_Click"/>
+            <Button x:Name="btn_decrypt" Content="Decrypt" Width="100" Height="40" Click="btn_decrypt_Click"/>
+            <Button x:Name="btn_clear" Content="Clear" Width="60" Height="40" Click="btn_clear_Click"/>
+            <Button x:Name="btn_copy" Content="Copy Output" Width="120" Height="40" Click="btn_copy_Click"/>
+            <Button x:Name="btn_switch" Content="Switch Output to Input" Width="140" Height="40" Click="btn_switch_Click"/>
+        </StackPanel>
+    </Grid>
+
+</Window>

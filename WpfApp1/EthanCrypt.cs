@@ -8,11 +8,11 @@ namespace WpfApp1
 {
     public class EthanCrypt : Crypting
     {
-        public override string Name => "EthanCrypt";
+        public override string Name => "Ethan Crypt";
 
         public override string Description => "A little algorithm that I made which convert each letter ascii code into an hexa value and put them after each other.";
 
-        public override string Encyrypt(string content, int? shift)
+        public override string Encyrypt(string content, int? shift, string? key)
         {
             StringBuilder hexResult = new StringBuilder();
 
@@ -28,7 +28,7 @@ namespace WpfApp1
             return hexResult.ToString();
         }
 
-        public override string Decyrypt(string content, int? shift)
+        public override string Decyrypt(string content, int? shift, string? key)
         {
             if (string.IsNullOrEmpty(content) || content.Length % 2 != 0)
             {

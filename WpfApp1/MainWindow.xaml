@@ -13,7 +13,7 @@
 
         <!-- Output Section -->
         <Label Content="Result :" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="label_output" Text="Output" HorizontalAlignment="Left" Margin="400,50,0,0" VerticalAlignment="Top" Width="300" Height="100" Background="LightGray" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="textbox_output" Text="Output" HorizontalAlignment="Left" Margin="400,50,0,0" VerticalAlignment="Top" Width="300" Height="100" Background="LightGray" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
 
 
         <!-- Controls -->
@@ -21,17 +21,24 @@
         <Label x:Name="label_description" Content="" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top"/>
 
         <Label x:Name="label_shift" Content="Shift : (1)" HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="120,220,0,0" VerticalAlignment="Top" Width="230" Minimum="1" Maximum="25" Value="1" TickFrequency="1" IsSnapToTickEnabled="True" Visibility="Hidden" ValueChanged="slider_ValueChanged"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="120,220,0,0" VerticalAlignment="Top" Width="230" Minimum="1" Maximum="25" Visibility="Hidden" Value="1" TickFrequency="1" IsSnapToTickEnabled="True"  ValueChanged="slider_ValueChanged"/>
+
+        <TextBox x:Name="textbox_key" HorizontalAlignment="Left" Margin="50,220,0,0" VerticalAlignment="Top" Width="200" TextWrapping="NoWrap"/>
+        <Label x:Name="label_key" Content="This Crypting method need a key." HorizontalAlignment="Left" Margin="50,238,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
 
         <Label x:Name="label_alerte" Content="" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" FontSize="12" Foreground="Red"/>
 
         <!-- Buttons -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,374,0,0" Width="688">
             <Button x:Name="btn_encrypt" Content="Encrypt" Width="100" Height="40" Click="btn_encrypt_Click"/>
             <Button x:Name="btn_decrypt" Content="Decrypt" Width="100" Height="40" Click="btn_decrypt_Click"/>
             <Button x:Name="btn_clear" Content="Clear" Width="60" Height="40" Click="btn_clear_Click"/>
             <Button x:Name="btn_copy" Content="Copy Output" Width="120" Height="40" Click="btn_copy_Click"/>
             <Button x:Name="btn_switch" Content="Switch Output to Input" Width="140" Height="40" Click="btn_switch_Click"/>
+            <Button x:Name="btn_copy_key" Content="Copy Key" Click="btn_copy_key_Click" Width="60" Visibility="Hidden"/>
+            <Button x:Name="btn_generate_key" Content="Generate Key" Click="btn_generate_key_Click" Width="100" Visibility="Hidden"/>
         </StackPanel>
     </Grid>
 

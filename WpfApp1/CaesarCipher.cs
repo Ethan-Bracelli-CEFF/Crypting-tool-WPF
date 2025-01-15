@@ -8,11 +8,11 @@ namespace WpfApp1
 {
     public class CaesarCipher : Crypting
     {
-        public override string Name => "CaesarCipher";
+        public override string Name => "Caesar Cipher";
 
         public override string Description => "The simple and very well known Caesar Cipher use an aditionnal number to shift each letter in the alphabet.";
 
-        public override string Encyrypt(string content, int? shift)
+        public override string Encyrypt(string content, int? shift, string? key)
         {
             int shiftValue = shift.Value;
 
@@ -27,7 +27,7 @@ namespace WpfApp1
             }).ToArray());
         }
 
-        public override string Decyrypt(string content, int? shift)
+        public override string Decyrypt(string content, int? shift, string? key)
         {
             int shiftValue = shift.Value;
 
